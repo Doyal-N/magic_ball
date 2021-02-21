@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math/rand"
 	"time"
 )
@@ -9,12 +8,20 @@ import (
 func main() {
 	rand.Seed(time.Now().UnixNano())
 
+	println(getGreeting(), "\n")
+	println(getRandomAnswer())
+}
+
+func getGreeting() string {
 	var greetings = []string{
 		"Привет, дорогой друг. Отвечаю на твой вопрос...",
 		"Кто вопрошает, тот получит ответ:",
 		"Здравствуй, смертный. Сегодня для тебя такой ответ:",
 	}
+	return greetings[rand.Intn(len(greetings))]
+}
 
+func getRandomAnswer() string {
 	var answers = []string{
 		"Бесспорно",
 		"Предрешено",
@@ -38,6 +45,5 @@ func main() {
 		"Весьма сомнительно",
 	}
 
-	fmt.Println(greetings[rand.Intn(len(greetings))])
-	fmt.Println("\nMagic Ball says:", answers[rand.Intn(len(answers))])
+	return answers[rand.Intn(len(answers))]
 }
