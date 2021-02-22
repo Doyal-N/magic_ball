@@ -9,7 +9,7 @@ func main() {
 	rand.Seed(time.Now().UnixNano())
 
 	println(getGreeting(), "\n")
-	println(getRandomAnswer())
+	println("Волшебный шар говорит:", getRandomAnswer())
 }
 
 func getGreeting() string {
